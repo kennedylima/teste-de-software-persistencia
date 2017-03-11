@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class ProdutoTeste {
 
     @Autowired
-    ProdutoRepository produtoRepository;
+    ProdutoRepository produtoRepository ;
 
     @Test
     public void deve_salvar_um_produto(){
@@ -21,6 +21,6 @@ public class ProdutoTeste {
 
         produtoRepository.salvar(geladeira);
 
-        assertNotNull(produtoRepository.buscaPelo("Geladeira"));
+        assertNotNull(geladeira.getId());
     }
 }

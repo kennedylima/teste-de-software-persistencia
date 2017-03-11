@@ -15,11 +15,16 @@ public class ProdutoDAO implements ProdutoRepository {
 
     @Override
     public void salvar(Produto produto) {
-        entityManager.persist(produto);
+       entityManager.persist(produto);
+
     }
 
+
     @Override
-    public Produto buscaPelo(String nome) {
-        return null;
+    public Produto buscaPela(String descricao) {
+        return (Produto) entityManager.createQuery("FROM Produto WHERE valor=:descricao")
+                .setParameter("descricao", descricao)
+                .setMaxResults(1)
+                .getSingleResult();
     }
 }

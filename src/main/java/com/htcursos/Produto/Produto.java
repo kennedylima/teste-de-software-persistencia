@@ -7,11 +7,13 @@ import javax.persistence.Entity;
 @Entity
 public class Produto extends EntidadeBase{
 
-    private final String produto;
-    private final double valor;
+    private  String descricao;
+    private  double valor;
 
-    public Produto(String produto, double valor) {
-        this.produto = produto;
+    public Produto() {}
+
+    public Produto(String descricao, double valor) {
+        this.descricao = descricao;
         this.valor = valor;
     }
 }
