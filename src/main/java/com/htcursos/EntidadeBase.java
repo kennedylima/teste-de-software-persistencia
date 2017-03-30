@@ -1,5 +1,7 @@
 package com.htcursos;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +12,8 @@ public class EntidadeBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @JsonView(EntidadeBase.class)
+    protected int id;
 
     public int getId() {
         return id;

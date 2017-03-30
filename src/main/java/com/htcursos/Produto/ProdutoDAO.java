@@ -26,12 +26,13 @@ public class ProdutoDAO implements ProdutoRepository {
     }
 
     @Override
-    public Produto buscarPeloId(int id) {
+    public Produto buscarPelo(int id) {
         return entityManager.find(Produto.class,id);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Collection<Produto> buscaTodos() {
+    public Collection<Produto> buscarTodos() {
         return entityManager.createQuery("FROM Produto p ").getResultList();
     }
 

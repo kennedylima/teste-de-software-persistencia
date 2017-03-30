@@ -8,7 +8,7 @@ public interface ProdutoRepository  {
 
     void excluir(int id);
 
-    Produto buscarPeloId(int id);
+    Produto buscarPelo(int id);
 
-    Collection<Produto> buscaTodos();
+    Collection<Produto> buscarTodos();
 }

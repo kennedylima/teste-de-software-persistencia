@@ -46,14 +46,14 @@ public class ProdutoTeste extends AbstractTransactionalJUnit4SpringContextTests 
     public void deve_excluir_um_produto_bucando_todos(){
         produtoRepository.excluir(banana.getId());
 
-        Collection<Produto> produtos = produtoRepository.buscaTodos();
+        Collection<Produto> produtos = produtoRepository.buscarTodos();
 
         assertThat(produtos, not(hasItem(banana)));
     }
 
     @Test
     public void deve_buscar_um_produto_pelo_id(){
-        Produto produtoEncontrado = produtoRepository.buscarPeloId(banana.getId());
+        Produto produtoEncontrado = produtoRepository.buscarPelo(banana.getId());
         assertEquals(banana.getId(),produtoEncontrado.getId());
     }
 
@@ -63,7 +63,7 @@ public class ProdutoTeste extends AbstractTransactionalJUnit4SpringContextTests 
         int quantidadeEsperada = 2;
 
         produtoRepository.salvar(maca);
-        Collection<Produto> produtos = produtoRepository.buscaTodos();
+        Collection<Produto> produtos = produtoRepository.buscarTodos();
 
         assertEquals(quantidadeEsperada, produtos.size());
 
